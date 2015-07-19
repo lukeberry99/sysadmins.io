@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app>
 
 <head>
 	<title>{{title}}</title>
@@ -51,7 +51,7 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse mymenu"></header>
+    <header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse mymenu"></header>
 	<section class="content">
 		<section class="container">
 			{% block content %}{% endblock %}
@@ -71,7 +71,9 @@
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
 	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
-	{% endif %}
+    {% endif %}
+
+    <script type="text/javascript" src="../../lib/angular-route-styles/route-styles.js"></script>
 
 	<!--[if lt IE 9]>
 	<section class="browsehappy jumbotron hide">
